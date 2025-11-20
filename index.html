@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My AI490 Site </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+
+  <!-- Fonts & basic reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --ink:#1d2735;
+      --muted:#5f6b7a;
+      --brand:#1c3f8b;        /* deep navy */
+      --brand-2:#3b6bd6;      /* accent blue */
+      --border:#e7eaf0;
+      --radius:16px;
+      --shadow:0 6px 20px rgba(24,39,75,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:1080px;margin:auto;padding:24px}
+    header{display:flex;align-items:center;gap:18px;margin:6px 0 22px}
+    header a.back{color:var(--muted);font-weight:600}
+    .hero{padding:12px 0 10px}
+    .title{font-weight:800;letter-spacing:.2px;font-size:48px;margin:6px 0 10px}
+    .subtitle{color:var(--muted);font-weight:600;margin:0}
+
+    /* About card */
+    .about{display:grid;grid-template-columns:164px 1fr;gap:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin:18px 0 26px}
+    .avatar{width:164px;height:164px;border-radius:12px;background:#e9eef9 object-fit:cover;display:block}
+    .about h2{margin:0 0 6px;font-size:22px}
+    .about p{margin:6px 0;color:var(--muted)}
+
+    /* Cards grid */
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:10px 0 14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .card p{margin:6px 0 16px;color:var(--muted)}
+    .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;border-radius:10px;padding:12px 16px}
+    .btn.secondary{background:var(--brand-2)}
+    .note{color:#8a94a6;font-size:13px;margin-top:8px}
+
+    /* Responsive */
+    @media (max-width:820px){
+      .title{font-size:36px}
+      .about{grid-template-columns:1fr}
+      .avatar{width:120px;height:120px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello from my first webpage!</h1>
-    <p>This page will later host my coursework.</p>
+  <div class="container">
+    <!-- TOP: name + subtitle -->
+    <!-- TODO: Replace "Your Name" and the short description below -->
+    <div class="hero">
+      <h1 class="title">Your Name</h1>
+      <p class="subtitle">Undergraduate, Managerial Economics • University of Massachusetts Amherst</p>
+    </div>
+
+    <!-- ABOUT block (image + short bio) -->
+    <!-- TODO: replace profile.jpg (or remove the <img> if not needed) and edit bio -->
+    <section class="about">
+      <img class="avatar" src="profile.jpg" alt="Profile photo placeholder" />
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I’m a Managerial Economics student with a strong interest in <strong>AI</strong>, <strong>data analysis</strong>, and their applications in business and economics.
+          I like turning data into clear insights and building practical solutions.
+        </p>
+        <p>
+          Explore the links below to see my resume and course projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two prominent cards -->
+    <section class="grid">
+      <article class="card">
+        <h3>Resume</h3>
+        <p>View my professional background, education, and experience.</p>
+        <!-- TODO: replace resume.pdf if your file lives elsewhere -->
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      </article>
+
+      <article class="card">
+        <h3>Projects</h3>
+        <p>Explore my AI class project and academic work samples.</p>
+        <!-- TODO: keep project.html (next file) or change if you rename -->
+        <a class="btn secondary" href="project.html">View Projects</a>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
