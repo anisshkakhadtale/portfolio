@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Anisshka Annand Khadtale</title>
+  <title>Anisshka Annand Khadtale</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@
     .hero{margin-top:6px}
     .hero h1{
       margin:0 0 8px;
-      font-size:56px;
+      font-size:48px;
       line-height:1.05;
       font-weight:800;
       letter-spacing:-0.02em;
@@ -113,6 +113,7 @@
       gap:22px;
       margin-top:22px;
     }
+
     .action{
       padding:22px;
       text-align:center;
@@ -155,8 +156,60 @@
       border-color:rgba(255,255,255,.14);
     }
 
+    .section-content{
+      padding:24px 26px;
+      margin-top:22px;
+    }
+
+    .section-content h2{
+      margin:0 0 14px;
+      font-size:21px;
+      font-weight:700;
+    }
+
+    .section-content p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.75;
+    }
+
+    .section-content p:last-child{
+      margin-bottom:0;
+    }
+
+    .section-content strong{
+      color:var(--ink);
+    }
+
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .contact-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      font-weight:700;
+      padding:10px 16px;
+      border-radius:12px;
+      color:var(--ink);
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .12s ease, opacity .12s ease, border-color .12s ease;
+    }
+
+    .contact-link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(79,125,255,.45);
+    }
+
     @media (max-width: 860px){
-      .hero h1{font-size:40px}
+      .hero h1{font-size:36px}
       .about{grid-template-columns:1fr}
       .avatar{width:100%;height:200px}
       .grid{grid-template-columns:1fr}
@@ -168,24 +221,24 @@
   <main class="container">
     <section class="hero">
       <h1>Anisshka Annand Khadtale</h1>
-      <p>Undergraduate Student, Managerial Economics | University of Massachusetts Amherst 2026</p>
+      <p>Managerial Economics &amp; Public Interest Technology | University of Massachusetts Amherst 2026</p>
     </section>
 
     <hr class="divider" />
 
     <section class="card about">
       <div class="avatar">
-        <img src="profile.jpg" alt="Profile file (PDF may not display as image)">
+        <img src="profile.jpg" alt="Profile photo">
       </div>
 
       <div>
         <h2>About Me</h2>
         <p>
-          I'm a Managerial Economics and Public Interest Technology student interested in health economics, data analysis, and artificial intelligence.
+          I'm a UMass Amherst graduate who majored in Managerial Economics and completed a certificate in Public Interest Technology. My interests span over health economics, data analysis, and artificial intelligence.
           As I progress in my career, I wish to better understand how these tools support impactful social and policy decisions.
         </p>
         <p>
-          This site highlights my resume and my course projects.
+          This site showcases my resume, course projects, and research work.
         </p>
       </div>
     </section>
@@ -220,6 +273,32 @@
         <a class="btn btn-ghost" href="project.html">View Projects</a>
       </section>
     </section>
+
+    <section class="card section-content">
+      <h2>Interests</h2>
+      <p>
+        <strong>Music:</strong> I perform Hindustani classical vocal music and have served as an informal leader of my university's Indian Classical Music Club — leading rehearsals, mentoring newer members, and offering occasional private vocal lessons. I'm also part of a singing group that performs at events including weddings. There's something deeply grounding about Indian Classical music that has shaped how I think about discipline, practice, and expression.
+      </p>
+      <p>
+        <strong>Film:</strong> I'm an avid film enthusiast and blog about it under @film.fancier. I enjoy unpacking narrative structure, cinematography, and the ways film intersects with culture, society, and identity.
+      </p>
+      <p>
+        Beyond these, I'm drawn to excellent coffee, soul-nourishing travel, creative writing, and reading across fiction and nonfiction. I find that curiosity in one area (whether that be music, film, or a cup of coffee) tends to sharpen how I think in every other.
+      </p>
+    </section>
+
+    <section class="card section-content">
+      <h2>Connect</h2>
+      <p>
+        I'd love to connect on economics, health policy, AI governance, music, or film — feel free to reach out.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:anisshkakhadtale.apps@gmail.com" class="contact-link">📧 Email</a>
+        <a href="https://linkedin.com/in/anisshka-annand-khadtale/" target="_blank" rel="noopener" class="contact-link">💼 LinkedIn</a>
+        <a href="https://github.com/anisshkakhadtale" target="_blank" rel="noopener" class="contact-link">🔗 GitHub</a>
+      </div>
+    </section>
+
   </main>
 </body>
 </html>
