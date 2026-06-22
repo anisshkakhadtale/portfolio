@@ -41,9 +41,9 @@
     a{color:inherit;text-decoration:none}
 
     .container{
-      max-width:1100px;
+      max-width:1360px;
       margin:0 auto;
-      padding:28px 18px 54px;
+      padding:32px 40px 64px;
     }
 
     .hero{margin-top:6px}
@@ -74,16 +74,17 @@
       backdrop-filter: blur(6px);
     }
 
+    /* About: photo + bio + quick facts, three columns on wide screens */
     .about{
-      padding:22px;
+      padding:26px;
       display:grid;
-      grid-template-columns:180px 1fr;
-      gap:22px;
+      grid-template-columns:180px 1fr 260px;
+      gap:28px;
       align-items:center;
     }
 
     .avatar{
-      width:180px;height:150px;
+      width:180px;height:180px;
       border-radius:14px;
       border:1px solid rgba(79,125,255,.35);
       background:
@@ -104,8 +105,47 @@
       display:block;
     }
 
-    .about h2{margin:0 0 8px;font-size:22px}
-    .about p{margin:8px 0;color:var(--muted)}
+    .about-bio h2{margin:0 0 8px;font-size:22px}
+    .about-bio p{margin:8px 0;color:var(--muted)}
+
+    .quick-facts{
+      border-left:1px solid rgba(255,255,255,.10);
+      padding-left:24px;
+      align-self:stretch;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .quick-facts h3{
+      margin:0 0 6px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--blue);
+    }
+
+    .fact-item{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .fact-label{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:rgba(169,181,210,.7);
+    }
+
+    .fact-value{
+      font-size:14px;
+      font-weight:600;
+      color:var(--ink);
+    }
 
     .grid{
       display:grid;
@@ -156,9 +196,17 @@
       border-color:rgba(255,255,255,.14);
     }
 
-    .section-content{
-      padding:24px 26px;
+    /* Interests + Connect: two-column row on wide screens */
+    .two-col-row{
+      display:grid;
+      grid-template-columns:1.3fr 0.9fr;
+      gap:22px;
       margin-top:22px;
+      align-items:stretch;
+    }
+
+    .section-content{
+      padding:26px 28px;
     }
 
     .section-content h2{
@@ -182,20 +230,26 @@
       color:var(--ink);
     }
 
+    .connect-card{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
     .contact-links{
       display:flex;
-      flex-wrap:wrap;
-      gap:12px;
+      flex-direction:column;
+      gap:10px;
       margin-top:16px;
     }
 
     .contact-link{
-      display:inline-flex;
+      display:flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       font-size:14px;
       font-weight:700;
-      padding:10px 16px;
+      padding:12px 16px;
       border-radius:12px;
       color:var(--ink);
       background:rgba(255,255,255,.04);
@@ -208,10 +262,16 @@
       border-color:rgba(79,125,255,.45);
     }
 
-    @media (max-width: 860px){
-      .hero h1{font-size:36px}
+    @media (max-width: 980px){
       .about{grid-template-columns:1fr}
       .avatar{width:100%;height:200px}
+      .quick-facts{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.10);padding-top:20px}
+      .two-col-row{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 860px){
+      .container{padding:28px 18px 54px}
+      .hero h1{font-size:36px}
       .grid{grid-template-columns:1fr}
     }
   </style>
@@ -231,7 +291,7 @@
         <img src="profile.jpg" alt="Profile photo">
       </div>
 
-      <div>
+      <div class="about-bio">
         <h2>About Me</h2>
         <p>
           I'm a UMass Amherst graduate who majored in Managerial Economics and completed a certificate in Public Interest Technology. My interests span over health economics, data analysis, and artificial intelligence.
@@ -240,6 +300,26 @@
         <p>
           This site showcases my resume, course projects, and research work.
         </p>
+      </div>
+
+      <div class="quick-facts">
+        <h3>Quick Facts</h3>
+        <div class="fact-item">
+          <span class="fact-label">Location</span>
+          <span class="fact-value">Amherst, MA</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Education</span>
+          <span class="fact-value">B.S. Managerial Economics, 2026</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Languages</span>
+          <span class="fact-value">English, Marathi, Hindi</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Focus Areas</span>
+          <span class="fact-value">Health Econ &middot; AI Policy &middot; Data Analysis</span>
+        </div>
       </div>
     </section>
 
@@ -274,29 +354,31 @@
       </section>
     </section>
 
-    <section class="card section-content">
-      <h2>Interests</h2>
-      <p>
-        <strong>Music:</strong> I perform Hindustani classical vocal music and have served as an informal leader of my university's Indian Classical Music Club — leading rehearsals, mentoring newer members, and offering occasional private vocal lessons. I'm also part of a singing group that performs at events including weddings. There's something deeply grounding about Indian Classical music that has shaped how I think about discipline, practice, and expression.
-      </p>
-      <p>
-        <strong>Film:</strong> I'm an avid film enthusiast and blog about it under @film.fancier. I enjoy unpacking narrative structure, cinematography, and the ways film intersects with culture, society, and identity.
-      </p>
-      <p>
-        Beyond these, I'm drawn to excellent coffee, soul-nourishing travel, creative writing, and reading across fiction and nonfiction. I find that curiosity in one area (whether that be music, film, or a cup of coffee) tends to sharpen how I think in every other.
-      </p>
-    </section>
-
-    <section class="card section-content">
-      <h2>Connect</h2>
-      <p>
-        I'd love to connect on economics, health policy, AI governance, music, or film — feel free to reach out.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:anisshkakhadtale.apps@gmail.com" class="contact-link">📧 Email</a>
-        <a href="https://linkedin.com/in/anisshka-annand-khadtale/" target="_blank" rel="noopener" class="contact-link">💼 LinkedIn</a>
-        <a href="https://github.com/anisshkakhadtale" target="_blank" rel="noopener" class="contact-link">🔗 GitHub</a>
-      </div>
+    <section class="two-col-row">
+      <section class="card section-content">
+        <h2>Interests</h2>
+        <p>
+          <strong>Music:</strong> I perform Hindustani classical vocal music and have served as an informal leader of my university's Indian Classical Music Club — leading rehearsals, mentoring newer members, and offering occasional private vocal lessons. I'm also part of a singing group that performs at events including weddings. There's something deeply grounding about Indian Classical music that has shaped how I think about discipline, practice, and expression.
+        </p>
+        <p>
+          <strong>Film:</strong> I'm an avid film enthusiast and blog about it under @film.fancier. I enjoy unpacking narrative structure, cinematography, and the ways film intersects with culture, society, and identity.
+        </p>
+        <p>
+  Beyond these, I'm drawn to excellent coffee, soul-nourishing travel, creative writing, and reading across fiction and nonfiction. I find that curiosity in one area (whether that be music, film, or a cup of coffee) tends to sharpen how I think in every other.        </p>
+      </section>
+      <section class="card section-content connect-card">
+        <div>
+          <h2>Connect</h2>
+          <p>
+            I'd love to connect on economics, health policy, AI governance, music, or film — feel free to reach out.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:anisshkakhadtale.apps@gmail.com" class="contact-link">📧 Email</a>
+          <a href="https://linkedin.com/in/anisshka-annand-khadtale/" target="_blank" rel="noopener" class="contact-link">💼 LinkedIn</a>
+          <a href="https://github.com/anisshkakhadtale" target="_blank" rel="noopener" class="contact-link">🔗 GitHub</a>
+        </div>
+      </section>
     </section>
 
   </main>
